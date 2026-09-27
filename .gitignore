@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+models/*.onnx
+models/*.bin
+models/*.pte
+models/*.qnn
+outputs/
+.DS_Store
