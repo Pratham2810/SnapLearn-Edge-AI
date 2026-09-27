@@ -1,0 +1,5 @@
+streamlit>=1.38
+numpy>=1.26
+soundfile>=0.12
+onnxruntime>=1.19
+python-dotenv>=1.0
