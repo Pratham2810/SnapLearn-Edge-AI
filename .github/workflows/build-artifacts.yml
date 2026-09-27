@@ -38,5 +38,6 @@ jobs:
             echo "No artifact changes to commit."
           else
             git commit -m "Build submission PDF and PPTX artifacts"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
