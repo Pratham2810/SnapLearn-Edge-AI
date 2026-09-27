@@ -6,7 +6,7 @@ SnapLearn Edge converts recorded lectures, meetings and voice notes into transcr
 
 > **Challenge positioning:** newly created AI use case intended to be optimized for Snapdragon-powered HP PCs, with Qualcomm AI Hub/open-source model integration.
 
-![SnapLearn Edge](assets/hero.png)
+![SnapLearn Edge](assets/hero.svg)
 
 ## Why this matters
 Students and knowledge workers increasingly rely on AI to process lectures and meetings, but cloud-first workflows can introduce privacy concerns, connectivity dependence, latency and recurring inference cost. SnapLearn Edge is designed around an **offline-first edge AI workflow**: sensitive audio and derived knowledge can remain on the PC.
@@ -33,20 +33,24 @@ SnapLearn-Edge-AI/
 │   ├── transcribe.py
 │   └── summarize.py
 ├── docs/
+│   ├── PROJECT_DESCRIPTION.md
 │   ├── Project_Description.pdf
-│   ├── Project_Description.docx
 │   ├── Pitch_Deck.pdf
 │   ├── Pitch_Deck.pptx
 │   ├── TECHNICAL_ARCHITECTURE.md
 │   ├── DEPLOYMENT_SNAPDRAGON.md
 │   ├── CHALLENGE_MAPPING.md
 │   └── MODELS.md
+├── scripts/
+│   └── build_submission_artifacts.py
 ├── models/
 │   └── README.md
 ├── assets/
-│   └── hero.png
+│   └── hero.svg
 ├── examples/
 │   └── sample_transcript.txt
+├── .github/workflows/
+│   └── build-artifacts.yml
 ├── requirements.txt
 └── LICENSE
 ```
@@ -69,15 +73,20 @@ The prototype demonstrates the product workflow and model-adapter boundaries wit
 
 **Deployment & Accessibility** — simple Windows/Python setup, evaluator-friendly UI, documented Snapdragon integration path.
 
-**Presentation & Documentation** — proposal PDF/DOCX, pitch deck PDF/PPTX, architecture, deployment and model documentation.
+**Presentation & Documentation** — project-description PDF, pitch deck PDF/PPTX, architecture, deployment and model documentation.
 
 ## Submission artifacts
+- [Project Description — readable source](docs/PROJECT_DESCRIPTION.md)
 - [Project Description PDF](docs/Project_Description.pdf)
-- [Project Description DOCX](docs/Project_Description.docx)
 - [Pitch Deck PDF](docs/Pitch_Deck.pdf)
 - [Pitch Deck PPTX](docs/Pitch_Deck.pptx)
 - [Challenge Mapping](docs/CHALLENGE_MAPPING.md)
 - [Snapdragon Deployment Guide](docs/DEPLOYMENT_SNAPDRAGON.md)
+- [Technical Architecture](docs/TECHNICAL_ARCHITECTURE.md)
+- [Model Plan](docs/MODELS.md)
+
+## Reproducible submission build
+The PDF and PPTX submission artifacts are generated from source code in `scripts/build_submission_artifacts.py`. The GitHub Actions workflow in `.github/workflows/build-artifacts.yml` rebuilds and commits those files when the generator changes.
 
 ## Current implementation status
 This repository is a challenge-ready prototype/scaffold. The UI and application flow are present; model binaries are deliberately excluded. Hardware-specific NPU inference must be connected and benchmarked on the target Snapdragon-powered HP PC before claiming measured latency, throughput or power figures.
